@@ -23,10 +23,10 @@ db.users=require("./user.model.js")(sequelize, Sequelize);
 db.products=require("./product.model.js")(sequelize, Sequelize);
 db.role = require("../models/role.model.js")(sequelize, Sequelize);
 
-db.role.belongsToMany(db.user, {
+db.role.belongsToMany(db.users, {
   through: "user_roles"
 });
-db.user.belongsToMany(db.role, {
+db.users.belongsToMany(db.role, {
   through: "user_roles"
 });
 
