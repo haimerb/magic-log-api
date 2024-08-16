@@ -8,6 +8,10 @@ module.exports = (sequelize, Sequelize) => {
     },
     price: {
       type:Sequelize.DECIMAL(10, 2)
+    },
+    isActive: {
+      type: Sequelize.BOOLEAN,
+      defaultValue: true
     }
   });
 
