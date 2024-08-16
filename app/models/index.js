@@ -22,6 +22,12 @@ db.sequelize = sequelize;
 db.users=require("./user.model.js")(sequelize, Sequelize);
 db.products=require("./product.model.js")(sequelize, Sequelize);
 db.role = require("../models/role.model.js")(sequelize, Sequelize);
+db.shoppngcarts = require("../models/shoppingcart.model.js")(sequelize, Sequelize);
+
+db.users.hasOne(db.shoppngcarts,{
+  foreignKey:"userId"
+});
+
 
 db.role.belongsToMany(db.users, {
   through: "user_roles"
