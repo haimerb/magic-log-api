@@ -5,7 +5,8 @@ const app = express();
 
 var corsOptions = {
   //origin: "http://localhost:8081"
-  origin: "http://localhost:3000"
+  //origin: "http://localhost:3000"
+  origin: "*"
 };
 
 app.use(cors(corsOptions));
@@ -25,10 +26,10 @@ db.sequelize.sync()
     console.log("Failed to sync db: " + err.message);
   });
 
-db.sequelize.sync({ force: true }).then(() => {
-  console.log("Drop and re-sync db.");
-  initial();
-});
+// db.sequelize.sync({ force: true }).then(() => {
+//   console.log("Drop and re-sync db.");
+//   initial();
+// });
 
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to Magic-Log Marketplace test api application." });

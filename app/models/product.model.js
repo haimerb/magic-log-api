@@ -6,6 +6,7 @@ module.exports = (sequelize, Sequelize) => {
     description: {
       type:Sequelize.STRING
     },
+    quantity: {type:Sequelize.INTEGER},
     price: {
       type:Sequelize.DECIMAL(10, 2)
     },
