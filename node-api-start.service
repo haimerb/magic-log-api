@@ -1,0 +1,13 @@
+[Unit]
+Description=Node API Service Start
+
+[Service]
+Type=simple
+Restart=always
+User=root
+Group=root
+WorkingDirectory=/tmp/magic-log-api
+ExecStart=/usr/bin/npm start
+
+[Install]
+WantedBy=multi-user.target
